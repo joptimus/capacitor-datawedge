@@ -1,3 +1,3 @@
 export interface DataWedgePluginPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  sendCommand(options: { command: string }): Promise<void>;
 }
