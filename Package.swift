@@ -7,22 +7,22 @@ let package = Package(
     products: [
         .library(
             name: "CapacitorDatawedge",
-            targets: ["DataWedgePluginPlugin"])
+            targets: ["DataWedgePlugin"])
     ],
     dependencies: [
         .package(url: "https://github.com/ionic-team/capacitor-swift-pm.git", branch: "main")
     ],
     targets: [
         .target(
-            name: "DataWedgePluginPlugin",
+            name: "DataWedgePlugin",
             dependencies: [
                 .product(name: "Capacitor", package: "capacitor-swift-pm"),
                 .product(name: "Cordova", package: "capacitor-swift-pm")
             ],
-            path: "ios/Sources/DataWedgePluginPlugin"),
+            path: "ios/Sources/DataWedgePlugin"),
         .testTarget(
-            name: "DataWedgePluginPluginTests",
-            dependencies: ["DataWedgePluginPlugin"],
-            path: "ios/Tests/DataWedgePluginPluginTests")
+            name: "DataWedgePluginTests",
+            dependencies: ["DataWedgePlugin"],
+            path: "ios/Tests/DataWedgePluginTests")
     ]
 )

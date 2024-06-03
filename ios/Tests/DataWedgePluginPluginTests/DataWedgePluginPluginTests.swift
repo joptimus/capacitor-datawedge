@@ -1,5 +1,5 @@
 import XCTest
-@testable import DataWedgePluginPlugin
+@testable import DataWedgePlugin
 
 class DataWedgePluginTests: XCTestCase {
     func testEcho() {

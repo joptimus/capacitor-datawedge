@@ -5,9 +5,9 @@ import Capacitor
  * Please read the Capacitor iOS Plugin Development Guide
  * here: https://capacitorjs.com/docs/plugins/ios
  */
-@objc(DataWedgePluginPlugin)
-public class DataWedgePluginPlugin: CAPPlugin, CAPBridgedPlugin {
-    public let identifier = "DataWedgePluginPlugin"
+@objc(DataWedgePlugin)
+public class DataWedgePlugin: CAPPlugin, CAPBridgedPlugin {
+    public let identifier = "DataWedgePlugin"
     public let jsName = "DataWedgePlugin"
     public let pluginMethods: [CAPPluginMethod] = [
         CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise)
