@@ -1,16 +1,14 @@
-import { registerPlugin } from '@capacitor/core';
+import { Capacitor, registerPlugin } from '@capacitor/core';
+import type { DataWedgePlugin } from './definitions';
 
+const DataWedge = registerPlugin<DataWedgePlugin>('DataWedge', {
+  web: () => import('./web').then(m => new m.DataWedgeWeb()),
+});
 
-
-export interface DataWedgePlugin {
-  sendCommand(options: { command: string }): Promise<void>;
-  setConfigProfile(options: { config: any }): Promise<void>;
-  echo(options: { value: string }): Promise<{ value: string }>;
+if (Capacitor.isNativePlatform()) {
+  DataWedge.__registerReceiver();
 }
 
-const DataWedge = registerPlugin<DataWedgePlugin>('DataWedgePlugin', {
-  web: () => import('./web').then(m => new m.DataWedgePluginWeb()),
-});
 
 export * from './definitions';
 export { DataWedge };
