@@ -3,6 +3,9 @@ import { WebPlugin } from '@capacitor/core';
 import type { DataWedgePlugin } from './definitions';
 
 export class DataWedgePluginWeb extends WebPlugin implements DataWedgePlugin {
+  setConfigProfile(_options: { config: any; }): Promise<void> {
+    throw new Error('Method not implemented.');
+  }
   sendCommand(options: { command: string; }): Promise<void> {
     console.log(options);
     throw new Error('Method not implemented.');
